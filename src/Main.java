@@ -25,13 +25,19 @@ public class Main {
                 System.out.println("Task added successfully");
             }
             if (input == 2) {
-                Task.displayTasks(taskList);
-                System.out.println("Choose which task to toggle done.");
-                int taskInput = scanner.nextInt();
-                int index = taskInput-1;
-                Task selected = taskList.get(index);
-                selected.toggleDone();
-                System.out.println("Updated" + selected);
+
+                if (taskList.size() < 1) {
+                    System.out.println("LOL No tasks yet");
+                } else {
+                    Task.displayTasks(taskList);
+                    System.out.println("Choose which task to toggle done.");
+                    int taskInput = scanner.nextInt();
+                    int index = taskInput-1;
+                    Task selected = taskList.get(index);
+                    selected.toggleDone();
+                    System.out.println("Updated" + selected);
+                }
+
             }
             if (input == 3) {
                 Task.displayTasks(taskList);
